@@ -15,8 +15,9 @@ export const ClientViews = () => {
         path="/"
         element={
           <>
+           <img className="bmh" src={"/image/bmh.png"} alt="be my hands" />
             <h1>Be My Hands</h1>
-            <img className="bmh" src={"image/bmh.png"} alt="be my hands" />
+           
             <div>
               {" "}
               <em>

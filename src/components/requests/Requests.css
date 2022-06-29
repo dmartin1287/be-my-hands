@@ -5,7 +5,8 @@
 
 .request {
     background-color: #9e8fbb;
-    border: 1px dotted rgb(20, 3, 33);
+    border: 1px solid rgb(104, 52, 144);
     padding: 0.7rem;
     margin: 0.5rem 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 3px 0px;
 }
