@@ -1,0 +1,24 @@
+.clients {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.client {
+    background-color: #8dc38b;
+    border: 1px dotted rgb(3, 33, 14);
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.client__header {
+    font-size: larger;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+.client__footer {
+    margin: 1rem 0 0.25rem 0;
+    font-style: oblique;
+}

@@ -1,0 +1,11 @@
+.requests {
+    display: flex;
+    flex-direction: column;
+}
+
+.request {
+    background-color: #9e8fbb;
+    border: 1px dotted rgb(20, 3, 33);
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+}
