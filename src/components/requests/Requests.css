@@ -1,13 +1,84 @@
 .requests {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .request {
     background-color: #b8f6b5;
-    border-radius: 25px;
+    border-radius: 20px;
     border: 1px solid rgb(76, 130, 37);
     padding: 0.7rem;
     margin: 0.5rem 0;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 500px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    scrollbar-width: auto;
+    width: 700px;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 700px;
+}
+
+.form-groupz {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: max-content;
+}
+
+.date {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 140px;
+}
+
+.nameContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.clientName {
+    display: inline-block;
+    flex-direction: row;
+    align-items: left;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right: 1rem;
+    width: 40%;
+}
+
+.clientLastName {
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-left: 1rem;
+    width: 40%;
+}
+
+.companyName {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 40%;
 }

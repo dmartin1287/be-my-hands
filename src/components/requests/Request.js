@@ -36,6 +36,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
     const copy = {
       userId: requestObject.userId,
       clientName: requestObject.clientName,
+      clientLastName: requestObject.clientLastName,
       companyName: requestObject.companyName,
       location: requestObject.location,
       serviceTypeId: requestObject.serviceTypeId,
@@ -115,7 +116,8 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
           </>
         )}
       </div>
-      <div>Client Name: {requestObject.clientName}</div>
+      <div>Client First Name: {requestObject.clientName}</div>
+      <div>Client Last Name: {requestObject.clientLastName}</div>
       <div>Company Name: {requestObject.companyName}</div>
       <div>Location: {requestObject.location}</div>
       <div>Description: {requestObject.description}</div>

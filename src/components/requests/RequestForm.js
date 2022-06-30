@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Requests.css"
 // import {} from "react"
 export const RequestForm = () => {
   /*
@@ -59,6 +60,8 @@ export const RequestForm = () => {
     let requestToSendToAPI = {
       userId:bmhUserObject.id,
       clientName: request.clientName,
+      
+      clientLastName: request.clientLastName,
 
       companyName: request.companyName,
 
@@ -100,13 +103,16 @@ export const RequestForm = () => {
       <h2 className="requestForm__title">New Service Request</h2>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="clientName"> Client's Name:</label>
+             <div className="nameContainer">
+             <div className="clientName">
+               
+          <label htmlFor="clientName"> Client's First Name:</label>
           <input
             required
             autoFocus
             type="text"
             className="form-control"
-            placeholder="Client's Name"
+            placeholder="Client's First Name" 
             value={request.clientName}
             onChange={(event) => {
               const copy = { ...request };
@@ -114,11 +120,31 @@ export const RequestForm = () => {
               update(copy);
             }}
           />
-          <label htmlFor="companyName">Company Name:</label>
+          
+          </div>
+          <div className="clientLastName">  
+            <label htmlFor="clientLastName"> Client's Last Name:</label>
           <input
             required
             autoFocus
             type="text"
+            className="form-control"
+            placeholder="Client's Last Name" 
+            value={request.clientLastName}
+            onChange={(event) => {
+              const copy = { ...request };
+              copy.clientLastName = event.target.value;
+              update(copy);
+            }}
+          />
+          </div>
+          </div>
+          <div className="companyName">
+          <label htmlFor="companyName">Company Name:</label>
+          <input
+            required
+            autoFocus
+            type="text" 
             className="form-control"
             placeholder="Company Name"
             value={request.companyName}
@@ -128,11 +154,12 @@ export const RequestForm = () => {
               update(copy);
             }}
           />
+          </div>
+          <div className="description">
           <label htmlFor="description">Description:</label>
-          <input
+          <textarea
             required
             autoFocus
-            type="text"
             className="form-control"
             placeholder="Brief description of what the client needs"
             value={request.description}
@@ -142,13 +169,15 @@ export const RequestForm = () => {
               update(copy);
             }}
           />
+          </div>
+          <div className="location">
           <label htmlFor="location">Location:</label>
           <input
             required
             autoFocus
             type="text"
             className="form-control"
-            placeholder="Location Address"
+            placeholder="Location address, City, State, and zip code"
             value={request.location}
             onChange={(event) => {
               const copy = { ...request };
@@ -156,10 +185,11 @@ export const RequestForm = () => {
               update(copy);
             }}
           />
+          </div>
         </div>
       </fieldset>
       <fieldset>
-        <div className="form-group">
+        <div className="form-groupz">
           <label htmlFor="serviceType">Service Needed:</label>
           <select
             //value={request.serviceTypeId}
@@ -182,7 +212,7 @@ export const RequestForm = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div className="form-group">
+        <div className="form-groupz">
           <label htmlFor="eventType">Event Type:</label>
           <select
             //value={request.eventTypeId}
@@ -205,7 +235,7 @@ export const RequestForm = () => {
         </div>
       </fieldset>
        <fieldset>
-        <div className="form-group">
+        <div className="date">
           <label htmlFor="eventDate">Event Date:</label>
          <input
             required
