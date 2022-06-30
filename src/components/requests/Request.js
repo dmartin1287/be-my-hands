@@ -41,6 +41,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
       serviceTypeId: requestObject.serviceTypeId,
       eventTypeId: requestObject.eventTypeId,
       description: requestObject.description,
+        date: requestObject.date,
       urgent: requestObject.urgent,
       dateCompleted: new Date(),
     };
@@ -120,6 +121,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
       <div>Description: {requestObject.description}</div>
        <div> Service needed: {requestObject?.serviceType?.serviceType}</div> 
       <div> Event type: {requestObject?.eventType?.eventType}</div> 
+      <div>Date needed: {requestObject.date}</div>
       <div>Urgent: {requestObject.urgent ? "⚠️" : "No"}</div>
       {userObject.staff ? (
         requestObject.interpreterRequests.length ? (

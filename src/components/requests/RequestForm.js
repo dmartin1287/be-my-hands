@@ -70,6 +70,8 @@ export const RequestForm = () => {
 
       eventTypeId: parseInt(request.eventTypeId),
 
+       date: request.date,
+
       urgent: request.urgent,
 
       dateCompleted: "",
@@ -132,7 +134,7 @@ export const RequestForm = () => {
             autoFocus
             type="text"
             className="form-control"
-            placeholder="Brief description of problem"
+            placeholder="Brief description of what the client needs"
             value={request.description}
             onChange={(event) => {
               const copy = { ...request };
@@ -200,6 +202,23 @@ export const RequestForm = () => {
               );
             })}
           </select>
+        </div>
+      </fieldset>
+       <fieldset>
+        <div className="form-group">
+          <label htmlFor="eventDate">Event Date:</label>
+         <input
+            required
+            autoFocus
+            type="date"
+            className="form-control"
+            value={request.date}
+            onChange={(evt) => {
+              const copy = { ...request };
+              copy.date = evt.target.value;
+              update(copy);
+            }}
+          />
         </div>
       </fieldset>
 
