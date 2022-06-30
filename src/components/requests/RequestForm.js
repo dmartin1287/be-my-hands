@@ -12,6 +12,7 @@ export const RequestForm = () => {
     companyName: "",
     location: "",
     description: "",
+    serviceTypeId: 0,
     eventTypeId: 0,
     urgent: false,
     dateCompleted: "",
@@ -28,6 +29,19 @@ export const RequestForm = () => {
         setEventTypes(eventTypeArray);
       });
   }, []);
+   const [serviceTypes, setServiceTypes] = useState(
+    []
+    // id:"",
+    // serviceType: ""
+  );
+  useEffect(() => {
+    fetch(`http://localhost:8088/serviceTypes`)
+      .then((response) => response.json())
+      .then((serviceTypeArray) => {
+        setServiceTypes(serviceTypeArray);
+      });
+  }, []);
+
 
   /*
         TODO: Use the useNavigation() hook so you can redirect
@@ -52,9 +66,11 @@ export const RequestForm = () => {
 
       description: request.description,
 
+      serviceTypeId: parseInt(request.serviceTypeId),
+
       eventTypeId: parseInt(request.eventTypeId),
 
-      emergency: request.emergency,
+      urgent: request.urgent,
 
       dateCompleted: "",
     };
@@ -82,13 +98,13 @@ export const RequestForm = () => {
       <h2 className="requestForm__title">New Service Request</h2>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="clientName"> Deaf Client's Name:</label>
+          <label htmlFor="clientName"> Client's Name:</label>
           <input
             required
             autoFocus
             type="text"
             className="form-control"
-            placeholder="Deaf Client's Name"
+            placeholder="Client's Name"
             value={request.clientName}
             onChange={(event) => {
               const copy = { ...request };
@@ -142,6 +158,29 @@ export const RequestForm = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
+          <label htmlFor="serviceType">Service Needed:</label>
+          <select
+            //value={request.serviceTypeId}
+            onChange={(evt) => {
+              const copy = { ...request }; // Copy of existing state
+              copy.serviceTypeId = parseInt(evt.target.value); 
+              update(copy); 
+            }}
+          >
+            <option value={0}>Please Select One</option>
+            {serviceTypes.map((serviceType) => {
+              return (
+                <option key={serviceType.id} value={serviceType.id}>
+                  {/* {""} */}
+                  {serviceType.serviceType}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
           <label htmlFor="eventType">Event Type:</label>
           <select
             //value={request.eventTypeId}
@@ -163,17 +202,16 @@ export const RequestForm = () => {
           </select>
         </div>
       </fieldset>
-      <fieldset></fieldset>
 
       <fieldset>
         <div className="form-group">
           <label htmlFor="name">Urgent:</label>
           <input
             type="checkbox"
-            value={request.emergency}
+            value={request.urgent}
             onChange={(event) => {
               const copy = { ...request };
-              copy.emergency = event.target.checked;
+              copy.urgent = event.target.checked;
               update(copy);
             }}
           />

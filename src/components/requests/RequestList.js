@@ -17,7 +17,7 @@ export const RequestList = ({ searchTermState }) => {
 
         const getAllRequests = () => {
     fetch(
-      `http://localhost:8088/serviceRequests?_embed=interpreterRequests&_expand=eventType`
+      `http://localhost:8088/serviceRequests?_embed=interpreterRequests&_expand=serviceType&_expand=eventType`
     )
       .then((response) => response.json())
       .then((requestArray) => {

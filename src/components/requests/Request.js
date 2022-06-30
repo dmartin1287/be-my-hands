@@ -38,6 +38,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
       clientName: requestObject.clientName,
       companyName: requestObject.companyName,
       location: requestObject.location,
+      serviceTypeId: requestObject.serviceTypeId,
       eventTypeId: requestObject.eventTypeId,
       description: requestObject.description,
       urgent: requestObject.urgent,
@@ -117,6 +118,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
       <div>Company Name: {requestObject.companyName}</div>
       <div>Location: {requestObject.location}</div>
       <div>Description: {requestObject.description}</div>
+       <div> Service needed: {requestObject?.serviceType?.serviceType}</div> 
       <div> Event type: {requestObject?.eventType?.eventType}</div> 
       <div>Urgent: {requestObject.urgent ? "⚠️" : "No"}</div>
       {userObject.staff ? (
