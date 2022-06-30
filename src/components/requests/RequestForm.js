@@ -75,6 +75,7 @@ export const RequestForm = () => {
         navigate("/requests");
       });
   };
+  
 
   return (
     <form className="requestForm">
@@ -162,6 +163,7 @@ export const RequestForm = () => {
           </select>
         </div>
       </fieldset>
+      <fieldset></fieldset>
 
       <fieldset>
         <div className="form-group">
