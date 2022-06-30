@@ -29,13 +29,20 @@ export const Login = () => {
     }
 
     return (
-      <main className="container--login">
+      
+       <div className="asl-back">
+          <>
+          
+
+       {/* <img className="asl" src={"/image/asl.jpg"} alt="be my hands" /> */}
+       <main className="container--login">
         <section>
           <form className="form--login" onSubmit={handleLogin}>
-            <h1>Be My Hands</h1>
+
+            <h1 className="header"> Be My Hands</h1>
             <h2>Please sign in</h2>
             <fieldset>
-              <label htmlFor="inputEmail"> Email address </label>
+              <label htmlFor="inputEmail"> Email address: </label>
               <input
                 type="email"
                 value={email}
@@ -43,8 +50,7 @@ export const Login = () => {
                 className="form-control"
                 placeholder="Email address"
                 required
-                autoFocus
-              />
+                autoFocus />
             </fieldset>
             <fieldset>
               <button type="submit" className="submitButton">
@@ -54,9 +60,10 @@ export const Login = () => {
           </form>
         </section>
         <section className="link--register">
-          <Link to="/register">Not a member yet? </Link>
+          <Link to="/register">Not a member yet?</Link>
         </section>
-      </main>
+      </main></>
+      </div>
     );
 }
 

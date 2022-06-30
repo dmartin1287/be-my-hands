@@ -95,7 +95,7 @@ export const RequestForm = () => {
               update(copy);
             }}
           />
-          <label htmlFor="companyName">Name of Company:</label>
+          <label htmlFor="companyName">Company Name:</label>
           <input
             required
             autoFocus
@@ -146,8 +146,8 @@ export const RequestForm = () => {
             //value={request.eventTypeId}
             onChange={(evt) => {
               const copy = { ...request }; // Copy of existing state
-              copy.eventTypeId = parseInt(evt.target.value); //took out parseInt()
-              update(copy);
+              copy.eventTypeId = parseInt(evt.target.value); 
+              update(copy); 
             }}
           >
             <option value={0}>Please Select One</option>

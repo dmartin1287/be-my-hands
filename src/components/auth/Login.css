@@ -3,6 +3,30 @@ h1 {
     font-size: 2.5rem;
 }
 
+.asl-back {
+    background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm315-ploy-06.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=7e716d7fce86061c1fe99d177c3a153a");
+    background-color: lightpink;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    /* Specific to this particular image */
+    .asl-back {
+        left: 50%;
+        margin-left: -512px;
+        /* 50% */
+    }
+}
+
 fieldset {
     min-width: 0;
     padding: 1rem 0;
@@ -13,7 +37,7 @@ fieldset {
 .form--login {
     display: inline-block;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .form--login>fieldset>input[type="email"] {
@@ -26,7 +50,7 @@ fieldset {
 }
 
 .form-control {
-    display: block;
+    display: inline-block;
     width: 94%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
@@ -40,6 +64,10 @@ fieldset {
     border-radius: .25rem;
     -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form--login2 {
+    text-align: left;
 }
 
 .container--login {

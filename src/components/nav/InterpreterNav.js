@@ -5,6 +5,7 @@ export const InterpreterNavBar = () => {
     const navigate = useNavigate()
 
     return (
+        
         <ul className="navbar">
              {/* <li className="navbar__item active">
                  <img className="logo" src={"/image/logo.jpeg"} alt ="logo" />
@@ -13,7 +14,7 @@ export const InterpreterNavBar = () => {
                 <Link className="navbar__link__home" to="/home">Home</Link>
             </li> */}
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/requests">Requests</Link>
+                <Link className="navbar__link" to="/requests"> Requests</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/interpreters">Interpreters</Link>
