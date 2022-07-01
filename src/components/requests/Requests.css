@@ -1,6 +1,6 @@
 .requests {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
@@ -46,6 +46,32 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 140px;
+}
+
+.time {
+    display: inline-block;
+    flex-direction: row;
+    align-items: left;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right: 1rem;
+    width: 60%;
+}
+
+.endtime {
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-left: 1rem;
+    width: 60%;
+}
+
+.timeContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
 }
 
 .nameContainer {

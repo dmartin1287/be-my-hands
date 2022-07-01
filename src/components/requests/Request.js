@@ -43,6 +43,9 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
       eventTypeId: requestObject.eventTypeId,
       description: requestObject.description,
         date: requestObject.date,
+        time: requestObject.time,
+        endtime: requestObject.endtime,
+        timeZoneId: requestObject.timeZoneId,
       urgent: requestObject.urgent,
       dateCompleted: new Date(),
     };
@@ -116,14 +119,17 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
           </>
         )}
       </div>
-      <div>Client First Name: {requestObject.clientName}</div>
-      <div>Client Last Name: {requestObject.clientLastName}</div>
+      <div>First Name: {requestObject.clientName}</div>
+      <div>Last Name: {requestObject.clientLastName}</div>
       <div>Company Name: {requestObject.companyName}</div>
       <div>Location: {requestObject.location}</div>
       <div>Description: {requestObject.description}</div>
        <div> Service needed: {requestObject?.serviceType?.serviceType}</div> 
       <div> Event type: {requestObject?.eventType?.eventType}</div> 
       <div>Date needed: {requestObject.date}</div>
+      <div>Start time: {requestObject.time}</div>
+      <div>End time: {requestObject.endtime}</div>
+      <div> Time Zone: {requestObject?.timeZone?.timeZone}</div> 
       <div>Urgent: {requestObject.urgent ? "⚠️" : "No"}</div>
       {userObject.staff ? (
         requestObject.interpreterRequests.length ? (

@@ -42,6 +42,18 @@ export const RequestForm = () => {
         setServiceTypes(serviceTypeArray);
       });
   }, []);
+  const [timeZones, setTimeZones] = useState(
+    []
+    // id:"",
+    // timeZone: ""
+  );
+  useEffect(() => {
+    fetch(`http://localhost:8088/timeZones`)
+      .then((response) => response.json())
+      .then((timeZoneArray) => {
+        setTimeZones(timeZoneArray);
+      });
+  }, []);
 
 
   /*
@@ -60,7 +72,7 @@ export const RequestForm = () => {
     let requestToSendToAPI = {
       userId:bmhUserObject.id,
       clientName: request.clientName,
-      
+
       clientLastName: request.clientLastName,
 
       companyName: request.companyName,
@@ -74,6 +86,12 @@ export const RequestForm = () => {
       eventTypeId: parseInt(request.eventTypeId),
 
        date: request.date,
+
+        time: request.time,
+
+        endtime: request.endtime,
+
+        timeZoneId: parseInt(request.timeZoneId),
 
       urgent: request.urgent,
 
@@ -251,6 +269,65 @@ export const RequestForm = () => {
           />
         </div>
       </fieldset>
+      <div className="timeContainer">
+        <fieldset>
+        <div className="time">
+          <label htmlFor="startTime">Start Time:</label>
+         <input
+            required
+            autoFocus
+            type="time"
+            className="form-control"
+            value={request.time}
+            onChange={(evt) => {
+              const copy = { ...request };
+              copy.time = evt.target.value;
+              update(copy);
+            }}
+          />
+        </div>
+      </fieldset>
+        <fieldset>
+        <div className="endtime">
+          <label htmlFor="endTime">End Time:</label>
+         <input
+            required
+            autoFocus
+            type="time"
+            className="form-control"
+            value={request.endtime}
+            onChange={(evt) => {
+              const copy = { ...request };
+              copy.endtime = evt.target.value;
+              update(copy);
+            }}
+          />
+        </div>
+      </fieldset>
+            <fieldset>
+        <div className="form-groupz">
+          <label htmlFor="timeZone">Time Zone:</label>
+          <select
+            //value={request.timeZoneId}
+            onChange={(evt) => {
+              const copy = { ...request }; // Copy of existing state
+              copy.timeZoneId = parseInt(evt.target.value); 
+              update(copy); 
+            }}
+          >
+            <option value={0}>Please Select One</option>
+            {timeZones.map((timeZone) => {
+              return (
+                <option key={timeZone.id} value={timeZone.id}>
+                  {/* {""} */}
+                  {timeZone.timeZone}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+      </fieldset>
+</div>
 
       <fieldset>
         <div className="form-group">
