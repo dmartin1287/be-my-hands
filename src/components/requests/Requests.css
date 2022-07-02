@@ -6,9 +6,9 @@
 }
 
 .request {
-    background-color: #b8f6b5;
+    background-color: #b1e8bc;
     border-radius: 20px;
-    border: 1px solid rgb(76, 130, 37);
+    border: 1px solid #063d13;
     padding: 0.7rem;
     margin: 0.5rem 0;
     width: 500px;
@@ -107,4 +107,132 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 40%;
+}
+
+
+/* CSS */
+
+.submit {
+    background-color: rgb(163, 208, 172);
+    border: 0 solid #e2e8f0;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    max-width: fit-content;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.submit:hover {
+    background-color: #878a8e;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .submit {
+        font-size: .8rem;
+        padding: 1rem 2rem;
+    }
+}
+
+
+/* CSS */
+
+.claim {
+    background-image: linear-gradient(#737373, #4f4f4f);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    font-size: .8em;
+    margin: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.trash {
+    height: 10px;
+    width: 10px;
+}
+
+.pencil {
+    height: 10px;
+    width: 10px;
+}
+
+.edit-button {
+    display: inline-block;
+    flex-direction: row;
+    align-items: left;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right: .1rem;
+    width: 20%;
+}
+
+.delete-button {
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space;
+    padding-left: .1rem;
+    width: 20%;
+}
+
+
+/* CSS */
+
+.urgent-button {
+    background-image: linear-gradient(#847adc, #9580c4);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    font-size: .9em;
+    margin: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.show-button {
+    background-image: linear-gradient(#847adc, #9580c4);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    font-size: .9em;
+    margin: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }

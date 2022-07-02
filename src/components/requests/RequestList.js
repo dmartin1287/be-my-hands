@@ -85,6 +85,7 @@ export const RequestList = ({ searchTermState }) => {
                   onClick={() => {
                     setUrgent(true);
                   }}
+                  className="urgent-button"
                 >
                   {" "}
                   Urgent Requests{" "}
@@ -93,6 +94,7 @@ export const RequestList = ({ searchTermState }) => {
                   onClick={() => {
                     setUrgent(false);
                   }}
+                  className="show-button"
                 >
                   {" "}
                   Show All{" "}

@@ -72,6 +72,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
   const deleteButton = () => {
     if (userObject.staff === false) {
       return (
+        <div className="delete-button">
         <button
           onClick={() => {
             fetch(`http://localhost:8088/serviceRequests/${requestObject.id}`, {
@@ -81,9 +82,14 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
               .then(getRequests);
           }}
           className="request__delete"
+         
+
         >
+           <img className = "trash" src = { "image/trashicon.png" }
+                alt = "trash icon" />
           Delete
         </button>
+        </div>
       );
     } else {
       return "";
@@ -92,6 +98,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
 
   const allowEdit = () => {
     return (
+      <div className="edit-button">
       <button
         type="button"
         onClick={(e) => {
@@ -99,8 +106,11 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
           window.location.href = `http://localhost:3000/requests/${requestObject.id}/edit`;
         }}
       >
+        <img className = "pencil" src = { "image/edit.png" }
+                alt = "edit icon" />
         Edit
       </button>
+      </div>
     );
   };
 
@@ -137,7 +147,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
             {showCompletedDate()} {canClose()}
           </footer>
         ) : (
-          <button
+          <button className="claim"
             onClick={() => {
               fetch(`http://localhost:8088/interpreterRequests`, {
                 method: "POST",

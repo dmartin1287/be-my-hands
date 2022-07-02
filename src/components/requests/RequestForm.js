@@ -345,7 +345,7 @@ export const RequestForm = () => {
       </fieldset>
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        className="btn btn-primary"
+        className="submit"
       >
         Submit Request
       </button>
