@@ -14,14 +14,14 @@ export const RequestList = ({ searchTermState }) => {
         const localUser = localStorage.getItem("bmh_user")
         const bmhUserObject = JSON.parse(localUser)
 
-          useEffect(
-        () => {
-            const searchedRequests = requests.filter(request => 
-                request.description.toLowerCase().startsWith(searchTermState.toLowerCase()))
-            setFiltered(searchedRequests)
-        },
-        [requests, searchTermState]
-    )
+    //       useEffect(
+    //     () => {
+    //         const searchedRequests = requests.filter(request => 
+    //             request.description.toLowerCase().startsWith(searchTermState.toLowerCase()))
+    //         setFiltered(searchedRequests)
+    //     },
+    //     [requests, searchTermState]
+    // )
 
         const getAllRequests = () => {
     fetch(
