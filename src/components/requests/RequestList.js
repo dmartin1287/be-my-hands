@@ -14,6 +14,14 @@ export const RequestList = ({ searchTermState }) => {
         const localUser = localStorage.getItem("bmh_user")
         const bmhUserObject = JSON.parse(localUser)
 
+          useEffect(
+        () => {
+            const searchedRequests = requests.filter(request => 
+                request.description.toLowerCase().startsWith(searchTermState.toLowerCase()))
+            setFiltered(searchedRequests)
+        },
+        [requests, searchTermState]
+    )
 
         const getAllRequests = () => {
     fetch(
@@ -102,17 +110,20 @@ export const RequestList = ({ searchTermState }) => {
               </>
             ) : (
               <>
-                <button onClick={() => navigate("/request/create")}>
+                <button className="newRequest-button" onClick={() => navigate("/request/create")}>
                   {" "}
                   New Request{" "}
+                  
                 </button>
-                <button onClick={() => updateOpenOnly(true)}>
+                <button className="openRequest-button" onClick={() => updateOpenOnly(true)}>
                   {" "}
                   Open Requests{" "}
+                  
                 </button>
-                <button onClick={() => updateOpenOnly(false)}>
+                <button className="allRequests-button" onClick={() => updateOpenOnly(false)}>
                   {" "}
                   All Requests{" "}
+                  
                 </button>
               </>
             )}
