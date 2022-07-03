@@ -80,7 +80,7 @@ export const Register = (props) => {
                     <label htmlFor="email"> I am an interpreter. </label>
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button className="register" type="submit"> Register </button>
                 </fieldset>
             </form>
         </main>

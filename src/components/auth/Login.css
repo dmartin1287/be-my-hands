@@ -109,7 +109,7 @@ fieldset {
 
 .submitButton:before {
     content: "";
-    background: linear-gradient( 45deg, #e0991f, #ff7300, #fffb00, #d2e927, #cddc27, #ffea00, #ff8000, #e78626, #d2940e);
+    background: linear-gradient( 45deg, #a85bae, #914f77, #0e0018, #a0237f, #5b038b, #156619, #083304, #400558, #da5bc9);
     position: absolute;
     top: -2px;
     left: -2px;
@@ -189,4 +189,25 @@ fieldset {
 
 .regButt:focus {
     box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+
+/* CSS */
+
+.register {
+    background-image: linear-gradient(#7bd5a0, #69b67e);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    font-size: .9em;
+    margin: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
