@@ -5,8 +5,9 @@ h1 {
 
 .asl-back {
     background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm315-ploy-06.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=7e716d7fce86061c1fe99d177c3a153a");
-    background-color: lightpink;
-    /* Set rules to fill background */
+    background-color:#FDDBD9;
+    background-repeat: no-repeat;
+/* Set rules to fill background */
     min-height: 100%;
     min-width: 1024px;
     /* Set up proportionate scaling */
