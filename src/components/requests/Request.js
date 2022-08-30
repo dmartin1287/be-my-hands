@@ -106,8 +106,7 @@ export const Request = ({ requestObject, userObject, interpreters, getRequests }
           window.location.href = `http://localhost:3000/requests/${requestObject.id}/edit`;
         }}
       >
-        <img className = "pencil" src = { "image/edit.png" }
-                alt = "edit icon" />
+        <img className = "pencil" src = { "image/edit.png" } alt = "edit icon" />
         Edit
       </button>
       </div>
